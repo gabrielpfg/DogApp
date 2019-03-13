@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="./controllers/myApp.js"></script>
+    <script src="./controllers/myCtrl.js"></script>
+    <script src="./services/myService.js"></script>
+    <script src="./controllers/personCtrl.js"></script>
+</header>
+
+<body ng-app="myApp" ng-controller="rootCtrl">
+    <div ng-init="myCol='lightblue'; product = {quantity:'10', cost:'1212'}; 
+    person={firstName:'John',lastName:'Doe'};init([1,15,19,2,40,9]);names=[{text:'abcd'},{text:'efgh'}]">
+    <div ng-repeat ="x in myDogModule.dogs" class="doginfo">
+        {{ $index + 1 }} - Name: {{x.name}}, Breed: {{x.breed}}<br>
+        <img src={{x.image}}>
+    </div>
+    <select ng-model="selectedName" ng-options="y.text for (x,y) in names">
+    </select>
+    {{selectedName.text}}
+    </div>
+    <button ng-click='myFunction()'>click me</button>
+</body>
+
+<style>
+    input.ng-invalid {
+        background-color: rgb(255, 38, 0);
+        color: white;
+    }
+
+    #email-input.ng-empty {
+        background-color: rgb(238, 255, 0);
+    }
+
+    .doginfo {
+        border: 1px solid rgb(7, 246, 39);
+        padding: 5px;
+    }
+</style>
+
+</html>
